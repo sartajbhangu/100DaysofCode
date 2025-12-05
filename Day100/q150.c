@@ -1,0 +1,23 @@
+// Use pointer to struct to modify and display data using -> operator.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student {
+    char name[50];
+    int roll;
+    int marks;
+};
+
+int main() {
+    struct Student *s = malloc(sizeof(struct Student));
+
+    scanf("Student allocated dynamically with details: %s %d %d",
+          s->name, &s->roll, &s->marks);
+
+    printf("Name: %s | Roll: %d | Marks: %d",
+           s->name, s->roll, s->marks);
+
+    free(s);
+    return 0;
+}
